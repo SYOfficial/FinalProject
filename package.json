@@ -1,0 +1,19 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "FInal Project Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYOfficial/FinalProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYOfficial/FinalProject/issues"
+  },
+  "homepage": "https://github.com/SYOfficial/FinalProject#readme"
+}
