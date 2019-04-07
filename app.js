@@ -15,6 +15,14 @@ app.get('/posts', (request, response) => {
     response.render('posts.hbs');
 });
 
+app.get('/settings', (request, response) => {
+    response.render('settings.hbs');
+});
+
+app.get('/register', (request, response) => {
+    response.render('register.hbs');
+});
+
 app.get('/404', (request, response) => {
     response.send({
         error: 'Page not found'
