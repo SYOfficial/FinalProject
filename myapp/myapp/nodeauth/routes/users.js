@@ -30,11 +30,12 @@ router.get("/login", function (req, res, next) {
 router.post("/login",
 	passport.authenticate("local", {
 		failureRedirect: "/users/login",
-		function (req, res) {
-			req.flash("success", "You are now logged in");
-			res.redirect("/");
-		}
-	}));
+		failureFlash: "Invalid username or password"
+	}),
+	function (req, res) {
+		req.flash("success", "You are now logged in");
+		res.redirect("/");
+	});
 
 passport.serializeUser(function (user, done) {
 	done(null, user.id);
@@ -69,13 +70,12 @@ passport.use(new LocalStrategy(function (username, password, done) {
 }));
 
 router.post("/register", upload.single("profileimage"), function (req, res, next) {
-	var {
-		name,
-		email,
-		username,
-		password,
-		password2
-	} = req.body;
+	var name = req.body.name;
+	var email = req.body.email;
+	var username = req.body.username;
+	var password = req.body.password;
+	var password2 = req.body.password2;
+	
 	if (req.file) {
 		console.log("Uploading File...");
 		var profileimage = req.file.filename;
