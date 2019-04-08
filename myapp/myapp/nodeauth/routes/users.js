@@ -25,6 +25,12 @@ router.get("/login", function (req, res, next) {
 	});
 });
 
+router.get("/add", function (req, res, next) {
+	res.render("add", {
+		title: "Add"
+	});
+});
+
 router.post("/register", upload.single("profileimage"), function (req, res, next) {
 	var {
 		name,
