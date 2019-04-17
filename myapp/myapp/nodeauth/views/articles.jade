@@ -3,16 +3,7 @@ extends layout
 block content
  h2.page-header Add Articles
  p Submit your article below
- form(method='post', action='/articles/add')
- .form-group
-  label Title
-  input.form-control(name='title', type='text', placeholder='Enter Title')
- .form-group
-  label Author
-  input.form-control(name='author', type='text', placeholder='Enter Author')
- .form-group
-  label Body
-  textarea.form-control(name='body')
- input.btn.btn-primary(type='submit', name='submit', value='Submit')
+ form(method='post', action='/articles/add', enctype='multipart/form-data')
+    p a
 
     
